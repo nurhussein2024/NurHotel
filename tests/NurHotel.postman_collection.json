@@ -1,0 +1,105 @@
+{
+    "info": {
+      "_postman_id": "nurhotel-api",
+      "name": "NurHotel API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Register Admin",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:5000/api/register",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["api", "register"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin123\",\n    \"role\": \"Admin\"\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "Login Admin",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:5000/api/login",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["api", "login"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin123\"\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "Get All Rooms",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer {{token}}",
+              "type": "text"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:5000/api/rooms",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["api", "rooms"]
+          }
+        }
+      },
+      {
+        "name": "Create Room",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer {{token}}",
+              "type": "text"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:5000/api/rooms",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["api", "rooms"]
+          },
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"name\": \"Konferensrum 1\",\n    \"capacity\": 12,\n    \"type\": \"conference\"\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+  
